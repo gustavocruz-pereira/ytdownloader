@@ -16,20 +16,27 @@ window.setWindowTitle('Youtube Downloader')
 window.setFixedSize(350, 300)
 
 
-label = QLabel('Digite uma url:', parent=window)
+label = QLabel('Digite uma url', parent=window)
 label.move(20, 20)
 
-mp3_radiobtn = QRadioButton(".MP3", parent=window)
-mp3_radiobtn.move(20, 60)
-mp4_radiobtn = QRadioButton(".MP4", parent=window)
-mp4_radiobtn.move(20, 85)
-mp4_radiobtn.setChecked(True)
-
 textbox = QLineEdit("Url aqui.", parent=window)
-textbox.move(130, 20)
+textbox.setGeometry(20, 50, 310, 30)
+textbox.move(20, 50)
 
 button = QPushButton('Baixar', parent=window)
-button.move(230, 20)
+button.setGeometry(20, 50, 310, 30)
+button.move(20, 85)                     #9ACD32 #ADFF2F
+button.setStyleSheet("background-color: #ADFF2F;")
+
+lbl_ext_opts = QLabel('Selecione a extensão deseja baixar:', parent=window)
+lbl_ext_opts.setGeometry(20, 120, 310, 30)
+lbl_ext_opts.move(20, 120)
+
+mp3_radiobtn = QRadioButton(".MP3", parent=window)
+mp3_radiobtn.move(20, 150)
+mp4_radiobtn = QRadioButton(".MP4", parent=window)
+mp4_radiobtn.move(20, 175)
+mp4_radiobtn.setChecked(True)
 
 
 button.clicked.connect(clicked_btn)
