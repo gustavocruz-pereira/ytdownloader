@@ -1,18 +1,19 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QRadioButton, QMessageBox
-#from pytube import YouTube
-from ytdownload import download_video
-
-
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QRadioButton
+from ytdownload import download_video, download_audio
 
 def clicked_btn():
     url = textbox.text()
-    download_video(url)
+    if mp4_radiobtn.isChecked():
+        download_video(url)
+    elif mp3_radiobtn.isChecked():
+        download_audio(url)
+
 
 app = QApplication(sys.argv)
 window = QMainWindow()
-window.setWindowTitle('Janela de exemplo')
-window.setFixedSize(500, 300)
+window.setWindowTitle('Youtube Downloader')
+window.setFixedSize(350, 300)
 
 
 label = QLabel('Digite uma url:', parent=window)
@@ -27,9 +28,9 @@ mp4_radiobtn.setChecked(True)
 textbox = QLineEdit("Url aqui.", parent=window)
 textbox.move(130, 20)
 
-button = QPushButton('OK', parent=window)
+button = QPushButton('Baixar', parent=window)
 button.move(230, 20)
- 
+
 
 button.clicked.connect(clicked_btn)
 
