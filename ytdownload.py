@@ -16,6 +16,11 @@ def download_video(u) -> None:
         msgBox.exec_()
     except:
         print("Ocorreu um erro durante o processo de download :(")
+        msgBox = QMessageBox()
+        msgBox.setIcon(QMessageBox.Information)
+        msgBox.setText("Ocorreu um erro durante o processo de download :(")
+        msgBox.exec_()
+
     
 
 
