@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QRadioButton
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QRadioButton, QProgressBar
 from ytdownload import download_video, download_audio
+
 
 def clicked_btn():
     url = textbox.text()
@@ -28,7 +29,7 @@ button.setGeometry(20, 50, 310, 30)
 button.move(20, 85)                     #9ACD32 #ADFF2F
 button.setStyleSheet("background-color: #ADFF2F;")
 
-lbl_ext_opts = QLabel('Selecione a extensão deseja baixar:', parent=window)
+lbl_ext_opts = QLabel('Selecione a extensão que deseja baixar:', parent=window)
 lbl_ext_opts.setGeometry(20, 120, 310, 30)
 lbl_ext_opts.move(20, 120)
 
