@@ -27,11 +27,11 @@ def download_video(u) -> None:
     try:
         # Cria uma instância do YouTube com a URL fornecida
         yt = YouTube(u, on_progress_callback=download_progress())
-
         video = yt.streams.filter(progressive=True, file_extension='mp4', mime_type='video/mp4').first()
-        video.download()
+        downloads_path = os.path.join(os.path.expanduser("~"), "Downloads")
+        video.download(downloads_path)
         
-        msg = createMsg('Info', 'Video baixado com sucesso')
+        msg = createMsg('Info', 'Video baixado com sucesso na pasta "Downloads"')
         msg.exec_()
 
     except Exception as e:
@@ -50,7 +50,7 @@ def download_audio(u):
         new_file = base + '.mp3'
         os.rename(download_file, new_file)
 
-        msg = createMsg('Info', 'Audio baixado com sucesso')
+        msg = createMsg('Info', 'Audio baixado com sucesso na pasta "Downloads"')
         msg.exec_()
     except:
         msg = createMsg('Error', 'Ocorreu um erro durante o processo de download :(. Verifique a URL e tente de novo')
