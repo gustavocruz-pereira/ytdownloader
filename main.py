@@ -1,5 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QRadioButton, QProgressBar
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QRadioButton, QVBoxLayout
+from PyQt5.QtGui import QIcon
 from ytdownload import download_video, download_audio
 
 
@@ -14,18 +15,19 @@ def clicked_btn():
 app = QApplication(sys.argv)
 window = QMainWindow()
 window.setWindowTitle('Youtube Downloader')
-window.setFixedSize(350, 300)
+window.setFixedSize(450, 400)
+window.setWindowIcon(QIcon('img/download-da-nuvem.png'))
 
 
 label = QLabel('Digite uma url', parent=window)
 label.move(20, 20)
 
 textbox = QLineEdit("Url aqui.", parent=window)
-textbox.setGeometry(20, 50, 310, 30)
+textbox.setGeometry(20, 50, 410, 30)
 textbox.move(20, 50)
 
 button = QPushButton('Baixar', parent=window)
-button.setGeometry(20, 50, 310, 30)
+button.setGeometry(20, 50, 410, 30)
 button.move(20, 85)                     #9ACD32 #ADFF2F
 button.setStyleSheet("background-color: #ADFF2F;")
 
@@ -39,6 +41,9 @@ mp4_radiobtn = QRadioButton(".MP4", parent=window)
 mp4_radiobtn.move(20, 175)
 mp4_radiobtn.setChecked(True)
 
+link_label = QLabel('Desenvolvido por <a href="https://gustavocruzdev.netlify.app">Gustavo Cruz</a>', parent=window)
+link_label.setOpenExternalLinks(True)
+link_label.setGeometry(20, 250, 250, 30)
 
 button.clicked.connect(clicked_btn)
 

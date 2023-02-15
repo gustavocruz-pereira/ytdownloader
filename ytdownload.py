@@ -36,7 +36,7 @@ def download_video(u) -> None:
 
     except Exception as e:
         print("Ocorreu um erro durante o processo de download :(")
-        msg = createMsg('Error', f'Ocorreu um erro durante o processo de download :(. Verifique a URL e tente de novo {e}')
+        msg = createMsg('Error', f'Ocorreu um erro durante o processo de download :(. Verifique a URL e tente de novo. {e}')
         msg.exec_()
         
 
