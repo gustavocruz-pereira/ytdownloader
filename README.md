@@ -13,6 +13,7 @@ To install the program, simply clone this repository onto your local machine:
 
 `git clone https://github.com/gustavocruz-pereira/ytdownloader`
 
+To run the application, you have to execute the main.py file
 
 
 You'll also need to install the required libraries in the requirements.txt 
